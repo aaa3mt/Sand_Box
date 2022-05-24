@@ -3,7 +3,6 @@ apply {
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-android-extensions'
     apply plugin: 'kotlin-kapt'
-    apply plugin: 'com.google.gms.google-services'
     from "$project.rootDir/build_scripts/dependencies.gradle"
 }
 
@@ -88,43 +87,20 @@ dependencies {
     implementation jetpack.lifeCycleRuntimeKtx
     implementation jetpack.lifeCycleCommon
     implementation jetpack.lifeCycleRuntimeKtxAlpha
-    implementation jetpack.biometric
 
     // Navigation
     implementation navigation.fragmentKtx
     implementation navigation.ui
 
-    //Play Services
-    implementation playServices.core
-    implementation playServices.coreKtx
-    implementation playServices.auth
-    implementation playServices.smsRetriever
-    implementation playServices.maps
-    implementation playServices.location
-
     // Koin (DI)
     implementation libs.koin
     implementation libs.koinViewModel
-
-    //WorkManager
-    implementation libs.workManager
-    implementation libs.workManagerDefault
 
     // Retrofit (Network)
     implementation libs.retrofit
     implementation libs.retrofitGson
     implementation libs.interceptor
 
-    implementation libs.tedPermission
-    implementation libs.tedBottomPicker
-
-    //Room
-    implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
-
-    //Jsoup
-    implementation libs.jsoup
 
     // Logging
     implementation libs.timber
@@ -136,11 +112,5 @@ dependencies {
     androidTestImplementation test.testExtension
     androidTestImplementation test.espresso
 
-    //Parser
-    implementation libs.jsoup
-
-    //Firebase
-    implementation firebase.messaging
-    implementation firebase.analyticsKtx
 
 }

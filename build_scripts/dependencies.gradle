@@ -88,7 +88,6 @@ ext {
             shimmerLayout  : 'io.supercharge:shimmerlayout:2.1.0',
             jsoup          : 'org.jsoup:jsoup:1.11.1',
             workManager    : "androidx.work:work-runtime-ktx:$work_version",
-            workManagerDefault: "org.koin:koin-androidx-workmanager:2.2.0-rc-4",
             room           : "androidx.room:room-runtime:$room_version"
     ]
 
