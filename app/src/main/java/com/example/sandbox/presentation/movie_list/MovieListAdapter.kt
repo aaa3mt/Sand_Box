@@ -6,13 +6,13 @@ import androidx.recyclerview.widget.ListAdapter
 import com.example.sandbox.R
 import com.example.sandbox.domain.Movie
 
-class MovieListAdapter :
+class MovieListAdapter(private val onItemClick: (Movie) -> Unit) :
     ListAdapter<Movie, MovieViewHolder>(MovieDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
-        return MovieViewHolder(itemView)
+        return MovieViewHolder(itemView, onItemClick)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
