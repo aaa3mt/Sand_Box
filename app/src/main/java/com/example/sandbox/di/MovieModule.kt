@@ -1,3 +1,7 @@
 package com.example.sandbox.di
 
-val movieModule = module {}
+import org.koin.dsl.module
+
+val movieModule = module{
+
+}
