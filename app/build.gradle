@@ -30,9 +30,7 @@ android {
     productFlavors {
         prod {
             dimension "default"
-            buildConfigField "String", "BASE_URL", '"https://ib.jusan.kz"'
-            buildConfigField "String", "ENCRYPT_KEY", '"publickey_prod.der"'
-            buildConfigField "String", "AMPLITUDE_KEY", '"a3dd8755ad14364a4c6b22c55d66def9"'
+            buildConfigField "String", "BASE_URL", '"https://api.themoviedb.org/"'
             manifestPlaceholders = [
                     resourceSuffix      : "",
                     isCrashlyticsEnabled: "true"
@@ -101,17 +99,24 @@ dependencies {
     implementation libs.retrofit
     implementation libs.retrofitGson
     implementation libs.interceptor
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+
+
 
 
     // Logging
     implementation libs.timber
 
     //Image processing
+    implementation 'com.squareup.picasso:picasso:2.8'
     implementation libs.glide
     kapt libs.glideCompiler
     testImplementation test.junit
     androidTestImplementation test.testExtension
     androidTestImplementation test.espresso
 
-
 }
+
+
+
