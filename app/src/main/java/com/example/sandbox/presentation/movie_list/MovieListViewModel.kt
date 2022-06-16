@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.sandbox.FakeMovieDataFactory
 import com.example.sandbox.domain.Movie
 import com.example.sandbox.domain.MovieRepository
+import com.example.sandbox.domain.Response
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -29,7 +30,10 @@ class MovieListViewModel(
 
     private fun fetchMovies() = viewModelScope.launch{
         withContext(ioContext) {
-            repository.getMovies()
+            when(val result = repository.getMovies()) {
+                is Response.Success -> _movies.postValue(result.data)
+                is Response.Failure -> TODO()
+            }
         }
     }
 

@@ -8,11 +8,19 @@
     android:layout_marginHorizontal="16dp"
     android:layout_marginVertical="8dp">
 
+    <ImageView
+        android:id="@+id/movie_item_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/movie_item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/movie_item_image"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Tenet" />
 
@@ -24,7 +32,5 @@
         app:layout_constraintStart_toEndOf="@+id/movie_item_title"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="9.8" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,8 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface MovieApi {
+interface MovieDataSource {
 
     @GET("/3/movie/upcoming")
-    suspend fun getMovies(@Query("api_key") key: String = apiKey): Response<Movie>
+    suspend fun getMovies(@Query("api_key") key: String = api_key): Response<MovieListResponse>
 }
