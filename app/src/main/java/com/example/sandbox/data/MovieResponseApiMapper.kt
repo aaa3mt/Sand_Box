@@ -1,17 +1,16 @@
 package com.example.sandbox.data
 
-import com.example.sandbox.di.Mapper
+import com.example.sandbox.domain.Mapper
 import com.example.sandbox.domain.Movie
-import com.example.sandbox.presentation.MovieUi
 
 class MovieResponseApiMapper: Mapper<MovieResponse, Movie>() {
 
     override fun map(from: MovieResponse): Movie {
         return Movie(
-            rating = from.vote_average,
+            rating = from.voteAverage,
             title = from.title,
             description = from.overview,
-            imageUrl = image_url + from.posterPath
+            imageUrl = imageUrl + from.posterPath
         )
     }
 }

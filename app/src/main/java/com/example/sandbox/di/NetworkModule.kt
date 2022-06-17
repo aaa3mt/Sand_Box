@@ -1,6 +1,6 @@
 package com.example.sandbox.di
 
-import com.example.sandbox.data.Base_url
+import com.example.sandbox.data.baseUrl
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -14,7 +14,7 @@ val networkModule = module {
 
 fun provideRetrofit(): Retrofit {
     return Retrofit.Builder()
-        .baseUrl(Base_url)
+        .baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
