@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.navigation.findNavController
 import com.example.sandbox.R
-import com.example.sandbox.domain.Movie
+import com.example.sandbox.presentation.MovieUi
 import kotlinx.android.synthetic.main.fragment_movie_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -32,8 +32,8 @@ class MovieListFragment : Fragment(R.layout.fragment_movie_list) {
         }
     }
 
-    private fun onMovieClicked(movie: Movie) {
+    private fun onMovieClicked(movieUi: MovieUi) {
         requireView().findNavController()
-            .navigate(MovieListFragmentDirections.toMovieDetailsFragment(movie))
+            .navigate(MovieListFragmentDirections.toMovieDetailsFragment(movieUi))
     }
 }

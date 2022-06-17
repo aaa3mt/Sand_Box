@@ -1,6 +1,7 @@
 package com.example.sandbox.data
 
 import com.example.sandbox.domain.Movie
+import com.example.sandbox.presentation.MovieUi
 import com.example.sandbox.domain.MovieRepository
 import com.example.sandbox.domain.Response
 

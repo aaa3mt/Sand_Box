@@ -21,6 +21,6 @@
         tools:layout="@layout/fragment_movie_details" >
         <argument
             android:name="movie"
-            app:argType="com.example.sandbox.domain.Movie" />
+            app:argType="com.example.sandbox.presentation.MovieUi" />
     </fragment>
 </navigation>

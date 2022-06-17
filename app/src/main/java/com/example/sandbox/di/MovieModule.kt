@@ -4,6 +4,7 @@ import com.example.sandbox.data.DefaultMovieRepository
 import com.example.sandbox.data.MovieDataSource
 import com.example.sandbox.data.MovieResponseApiMapper
 import com.example.sandbox.domain.MovieRepository
+import com.example.sandbox.presentation.MovieToMovieUiMapper
 import com.example.sandbox.presentation.movie_list.MovieListViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.bind
@@ -19,7 +20,10 @@ val movieModule = module {
             movieResponseApiMapper = MovieResponseApiMapper()
         )
     }.bind(MovieRepository::class)
-    viewModel { MovieListViewModel(repository = get()) }
-
-
+    viewModel {
+        MovieListViewModel(
+            repository = get(),
+            movieToMovieUiMapper = MovieToMovieUiMapper()
+        )
+    }
 }

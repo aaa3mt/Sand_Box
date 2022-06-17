@@ -1,6 +1,5 @@
 package com.example.sandbox.data
 
-import com.example.sandbox.domain.Movie
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
